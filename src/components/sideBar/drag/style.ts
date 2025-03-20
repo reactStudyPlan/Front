@@ -1,25 +1,46 @@
 import styled from "styled-components";
 
-export const Side = styled.div<{ $open: boolean }>`
-  width: ${(props) => (props.$open ? "3rem" : "1rem")}; 
-  height: 60vh;
-  background-color: rgba(0, 0, 0, 0);
-  position: fixed;
-  transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
-  padding: ${(props) => (props.$open ? "0 0.5rem" : "0")}; 
-  left: ${(props) => (props.$position === "left" ? "0" : "auto")};
-  right: ${(props) => (props.$position === "right" ? "0" : "auto")};
-  top: ${(props) => (props.$position === "top" ? "0" : "auto")};
-  bottom: ${(props) => (props.$position === "bottom" ? "0" : "auto")};
-`;
-
-export const RSide = styled.div<{ $open: boolean }>`
-  height: 100%;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.23);
-  color: white;
-  transition: width 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+export const Side = styled.div<{$position:string}>`
+width: ${(props) =>
+  props.$position === "left" || props.$position === "right"
+    ? "3rem"
+    : props.$position === "top" || props.$position === "bottom"
+    ? "100vw"
+    : "auto"};
+  height: ${(props) =>
+    props.$position === "left" || props.$position === "right"
+      ? "100vh"
+      : props.$position === "top" || props.$position === "bottom"
+      ? "3rem"
+      : "auto"};
   display: flex;
   align-items: center;
-  border-radius: ${(props) => (props.$open ? "1rem" : "0")} 1rem 1rem ${(props) => (props.$open ? "1rem" : "0")};
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  transition: position 0.5s ease-in-out;
+  padding:  ${(props) =>
+  props.$position === "left" || props.$position === "right"
+    ? "0 0.5rem"
+    : props.$position === "top" || props.$position === "bottom"
+    ? "0.5rem 0"
+    : "auto"}; 
+  left: ${(props) => (props.$position === "right" ? "auto" : "0")};
+  right: ${(props) => (props.$position ===  "left"? "auto" : "0")};
+  top: ${(props) => (props.$position === "bottom" ? "auto" : "0")};
+  bottom: ${(props) => (props.$position === "top" ? "auto" : "0")};
+`;
+
+export const RSide = styled.div<{$position: string}>`
+  height: ${(props) =>
+    props.$position === "left" || props.$position === "right"
+      ? "20rem"
+      : "100%"};
+  width: ${(props) =>
+    props.$position === "left" || props.$position === "right"
+      ? "100%"
+      : "20rem"};
+  background-color: rgba(255, 255, 255, 0.23);
+  color: white;
+  border-radius: 1rem;
 `;
