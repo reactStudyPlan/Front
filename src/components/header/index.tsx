@@ -6,7 +6,9 @@ export default function Header() {
 
   return (
     <_.Side $open={open} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+			<_.RSide $open={open}>
       {/* {open && <button onClick={() => setOpen(false)}>↩</button>}  사이드바 안 요소 */}
+			</_.RSide>
     </_.Side>
   );
 }
