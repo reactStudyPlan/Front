@@ -18,7 +18,7 @@ const Container = styled.article<{isFlip : boolean}>`
         (isFlip ?  "perspective(800px) rotateY(0deg)":  "rotateY(180deg);")}
 `;
 
-const Content = styled.section`
+const Content = styled.section<{isFlip: boolean}>`
   grid-area: 1/1/1/1;
   backface-visibility: hidden;
   border-radius: 0.3125rem;
@@ -26,11 +26,11 @@ const Content = styled.section`
   width: 100%;
 `;
 
-const FrontContent = styled(Content)<{isFlip: boolean}>`
+const FrontContent = styled(Content)`
     background-color: blue;
 `;
 
-const BackContent = styled(Content)<{isFlip: boolean}>`
+const BackContent = styled(Content)`
     transform: rotateY(180deg);
     background-color: white;
 `;
