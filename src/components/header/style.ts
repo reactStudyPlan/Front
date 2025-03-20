@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Side = styled.div`
-  width: ${(props) => (props.$open ? "12rem" : "2rem")}; 
+  width: ${(props) => (props.$open ? "3rem" : "1rem")}; 
   height: 60vh;
   background-color: rgba(0, 0, 0, 0);
   position: fixed;
