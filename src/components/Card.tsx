@@ -12,10 +12,10 @@ const Container = styled.article<{isFlip : boolean}>`
   &:hover{
     transform: scale(1.2)
     ${({isFlip})=>
-        (isFlip ?  "perspective(800px) rotateY(0deg)":  "rotateY(180deg);")}
+        (!isFlip ?  "perspective(800px) rotateY(0deg)":  "rotateY(180deg);")}
   };
   transform: ${({isFlip})=>
-        (isFlip ?  "perspective(800px) rotateY(0deg)":  "rotateY(180deg);")}
+        (!isFlip ?  "perspective(800px) rotateY(0deg)":  "rotateY(180deg);")}
 `;
 
 const Content = styled.section<{isFlip: boolean}>`
@@ -32,7 +32,7 @@ const FrontContent = styled(Content)`
 
 const BackContent = styled(Content)`
     transform: rotateY(180deg);
-    background-color: white;
+    background-color: gray;
 `;
 
 const Card = () => {
