@@ -1,12 +1,12 @@
 import Card from './components/Card';
-import Hearder from './components/header';
+import SideBar from './components/sideBar/sideBar';
 
 function App() {
 
   return (
     <>
+      <SideBar/>
       <Card />
-      <Hearder/>
     </>
   )
 }
