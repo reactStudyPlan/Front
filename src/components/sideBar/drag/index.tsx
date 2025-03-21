@@ -11,7 +11,7 @@ const Drag = ({ position }: { position: string }) => {
   }));
 
   return (
-    <_.Side ref={drag} $position={position} style={{ opacity: isDragging ? 0 : 1 }}>
+    <_.Side ref={drag} $position={position} $dragging={isDragging} style={{ opacity: isDragging ? 0 : 1 }}>
       <_.RSide $position={position}>네비바</_.RSide>
     </_.Side>
   );

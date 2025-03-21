@@ -1,24 +1,26 @@
 import styled from "styled-components";
 
-export const Side = styled.div<{$position:string}>`
+export const Side = styled.div<{$position:string, $dragging: boolean}>`
 width: ${(props) =>
   props.$position === "left" || props.$position === "right"
     ? "3rem"
-    : props.$position === "top" || props.$position === "bottom"
-    ? "100vw"
-    : "auto"};
+    : "100vw"};
   height: ${(props) =>
     props.$position === "left" || props.$position === "right"
       ? "100vh"
-      : props.$position === "top" || props.$position === "bottom"
-      ? "3rem"
-      : "auto"};
+      : "3rem"};
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0);
   position: fixed;
-  transition: position 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+    transform: ${(props) =>
+      props.$dragging
+      ? 
+    props.$position === "left" || props.$position === "right"
+      ? "rotate(90deg)"
+      : "rotate(0deg)" : null};
   padding:  ${(props) =>
   props.$position === "left" || props.$position === "right"
     ? "0 0.5rem"
