@@ -15,12 +15,6 @@ width: ${(props) =>
   background-color: rgba(0, 0, 0, 0);
   position: fixed;
   transition: transform 0.5s ease-in-out;
-    transform: ${(props) =>
-      props.$dragging
-      ? 
-    props.$position === "left" || props.$position === "right"
-      ? "rotate(90deg)"
-      : "rotate(0deg)" : null};
   padding:  ${(props) =>
   props.$position === "left" || props.$position === "right"
     ? "0 0.5rem"

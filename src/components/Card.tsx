@@ -48,4 +48,5 @@ const Card = () => {
       </Container>
   )
 }
+
 export default Card
